@@ -61,11 +61,30 @@
             <th style="border: solid;">VIZAG</th>
             <th style="border: solid;">$2</th>
           </tr>
-              
+
                 </table>
-
-
-
-            
+                <hr>
+                <h4>
+                    Code display section</h4>
+                    <blockquote>
+                        <p>
+                            Polygon is a closed plane figure made up of several line segments that are joined together. The sides do not cross each other. Exactly two sides meet at every vertex. Polygons are named according to the number of sides.
+                        
+                    </blockquote></p><a href="https://sites.google.com/site/elementarygeometryresources/home/all-for-teachers/two-dimensional-shapes/polygons">link to souce code for polygon and polygon types/a>
+                <pre>
+                    template <class F1, class F2>
+                        int pointVsTriangle(const Point<F1>& point, const Polygon<F2>& triangle) {
+                          assert(triangle.size() == 3);
+                          int signs[3];
+                          for (int i = 0; i < 3; ++i)
+                            signs[i] = sgn(ccw(point, triangle[next(i, 3)], triangle[i]));
+                          if (signs[0] == signs[1] && signs[1] == signs[2]) return -1;
+                          for (int i = 0; i < 3; ++i) if (signs[i] * signs[next(i, 3)] == -1) return 1;
+                          return 0;
+                        }
+                        
+                </pre>
+                <a href="https://codeforces.com/blog/entry/48868">quick link to source code</a>
+   
     </body>
 </html>
